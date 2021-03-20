@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LogOutComponent } from './components/log-out/log-out.component';
 import { GameComponent } from './components/game/game.component';
+import { FirstNamePipe } from './shared/pipes/first-name.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { GameComponent } from './components/game/game.component';
     HomeComponent,
     NotFoundComponent,
     LogOutComponent,
-    GameComponent
+    GameComponent,
+    FirstNamePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,14 @@
-<div class="container p-3">
-    <div class="row justify-content-center text-center">
-        <h1 class="pb-2 col-sm-12">Snakes and Ladders!</h1>
+<div class="container">
+    <div class="row justify-content-center align-items-center text-center vh-100">
+        <h1 class="col-sm-12">Snakes and Ladders!</h1>
 
-        <form class="p-3" [formGroup]="loginForm" (ngSubmit)="saveData()">
+        <form class="" [formGroup]="loginForm" (ngSubmit)="saveData()">
             <div class="p-3" *ngIf="loggedIn">
                 <h3 class="">Hello, {{username}}</h3>
                 <button type="button" class="btn btn-link" routerLink="/logout">Forget me!</button>
             </div>
             <div class="form-group" *ngIf="!loggedIn">
-                <label for="name" >Who Is Playing?</label>
+                <label for="name">Who Is Playing?</label>
                 <input type="text" class="form-control" id="name" formControlName="name">
             </div>
             <div class="form-group" *ngIf="!loggedIn">

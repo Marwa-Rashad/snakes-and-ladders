@@ -1,50 +1,84 @@
-h1, h2 {
-    font-size: 2em;
-}
-
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
 
 .square-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
-  
-  .square {
-    position: relative;
-    flex-basis: 8%;
-    border: 1px solid #707070;
-    box-sizing: border-box;
-    background: #CBFFFB;
-
-  }
-
-  .square-container:nth-child(odd) .square:nth-child(even), .square-container:nth-child(even) .square:nth-child(odd) {
-	background:#79E8D8;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
-  
-  .square::before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-  }
-  
-  .square .content {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-    width: 100%;
-  
-    display: flex;               /* added for centered text */
-    justify-content: center;     /* added for centered text */
-    align-items: center;         /* added for centered text */
+
+.square {
+  position: relative;
+  flex-basis: 8%;
+  border: 1px solid #707070;
+  box-sizing: border-box;
+
+  background: #79e8d8;
+}
+
+.square-container:nth-child(odd) .square:nth-child(even),
+.square-container:nth-child(even) .square:nth-child(odd) {
+  background: #cbfffb;
+}
+
+.square::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  z-index: 2;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userInfo img {
+  width: 40px;
+  height: 40px;
+}
+.userInfo p {
+  font-size: 0.8rem;
+}
+.number {
+  top: 0;
+}
+
+.restart {
+  font-size: 1.2rem;
+  top: 75%;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 768px) {
+  * {
+    font-size: 70%;
   }
 
-  @media only screen and (max-width: 768px) {
-      * {
-          font-size: 13px;
-      }
+  .userInfo img {
+    width: 50%;
+    height: 50%;
   }
+
+  .restart {
+    font-size: 0.5rem;
+    top: 100px;
+
+  }
+
+}
+

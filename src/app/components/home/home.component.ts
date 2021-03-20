@@ -14,13 +14,15 @@ export class HomeComponent implements OnInit {
   URL_REGEXP = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
   username: string = "";
   imageUrl: string = "/assets/images/user.png";
+  height: string = "2";
+  width: string = "2";
   loggedIn: Boolean = false;
   constructor(private fb: FormBuilder, private localStorageService: LocalStorageService, private router: Router) {
     this.loginForm = this.fb.group({
       name: [''],
       imageUrl: ['', [Validators.pattern(this.URL_REGEXP)]],
-      height: ['5', [Validators.min(2), Validators.max(5)]],
-      width: ['5', [Validators.min(2), Validators.max(10)]],
+      height: ['2', [Validators.min(2), Validators.max(5)]],
+      width: ['2', [Validators.min(2), Validators.max(10)]],
 
     })
 
@@ -29,16 +31,18 @@ export class HomeComponent implements OnInit {
   //Save input by user
   saveData() {
     if (!this.loggedIn) {
-      this.username = this.ctrl.name.value ? this.ctrl.name.value : 'username';
-      this.imageUrl = this.ctrl.imageUrl.value && this.ctrl.imageUrl.valid ? this.ctrl.imageUrl.value : "/assets/images/user.png"
+      this.username = this.ctrl.name.value ? this.ctrl.name.value : 'Player';
+      this.imageUrl = this.ctrl.imageUrl.value && this.ctrl.imageUrl.valid ? this.ctrl.imageUrl.value : "/assets/images/user.png";
       this.localStorageService.save('username', this.username);
       this.localStorageService.save('imageUrl', this.imageUrl);
     }
-    this.localStorageService.save('height', this.ctrl.height.value);
+    //validate height and width
+    this.height = this.ctrl.height.value && this.ctrl.height.valid ? this.ctrl.height.value : 2;
+    this.width = this.ctrl.width.value && this.ctrl.width.valid ? this.ctrl.width.value : 2;
+
+    this.localStorageService.save('height', this.height);
     this.localStorageService.save('width', this.ctrl.width.value);
     this.router.navigate(['/game']);
-
-
   }
   ngOnInit(): void {
     if (this.localStorageService.get('username')) {

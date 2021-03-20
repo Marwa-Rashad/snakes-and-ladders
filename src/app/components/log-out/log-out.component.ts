@@ -12,12 +12,12 @@ export class LogOutComponent implements OnInit {
 
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
-  ngOnInit(): void {    
-this.localStorageService.delete('username');
-this.localStorageService.delete('imageUrl');
-this.localStorageService.delete('height');
-this.localStorageService.delete('width');
-this.router.navigate(['/home']);
+  ngOnInit(): void {
+    this.localStorageService.delete('username');
+    this.localStorageService.delete('imageUrl');
+    this.localStorageService.delete('height');
+    this.localStorageService.delete('width');
+    this.router.navigate(['/home']);
 
   }
 
