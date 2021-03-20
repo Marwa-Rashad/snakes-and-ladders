@@ -1,0 +1,28 @@
+<div class="container vh-100 grid d-flex flex-column justify-content-around text-center">
+    <div class="question">
+        <h3>
+            Question 1
+        </h3>
+        <h4>
+            What is the Capital of Egypt?
+        </h4>
+    </div>
+    <div>
+        <div class="square-container" *ngFor="let number of heightGrid">
+            <div class="square" *ngFor="let number of widthGrid">
+              <div class="content">
+              </div>
+            </div>
+            </div>
+    </div>
+
+        <div class="row align-items-center justify-content-around p-2">
+            <button type="button" class="btn btn-primary  p-sm-3 rounded-circle">True</button>
+            <button type="button" class="btn btn-danger  p-sm-3 rounded-circle">False</button>
+        </div>
+
+
+</div>
+
+
+

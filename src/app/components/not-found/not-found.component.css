@@ -1,0 +1,6 @@
+.error {
+    background: url('/assets/images/404.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
